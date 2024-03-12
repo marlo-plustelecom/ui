@@ -1,0 +1,44 @@
+[data-lastpass-icon-root] {
+  display: none !important;
+}
+
+:root {
+  --primary: #2b9b9f;
+  --primary-light: #6bb9bc;
+}
+
+html,
+body {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+main {
+  font-size: 1.6rem;
+}
+
+nav {
+  height: 85px;
+}
+
+.form-control {
+  font-size: 1.6rem;
+  line-height: 1.92rem;
+  height: 4.8rem;
+}
+
+input.form-control {
+  padding: 14.5px 12px;
+}
+
+.svg-inline--fa {
+  font-size: 2.1rem;
+}

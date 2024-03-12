@@ -1,0 +1,123 @@
+aside {
+  min-width: 380px;
+  max-width: 1176px;
+}
+
+aside[mode="search"] .list {
+  display: none;
+}
+
+aside[mode="result"] {
+  height: 100%;
+}
+
+aside .input-group {
+  max-width: 100%;
+  width: 100%;
+}
+
+.sortBy.gap-1,
+aside .gap-1 {
+  gap: 0.6rem;
+}
+
+aside .gap-4 {
+  gap: 1.6rem;
+}
+
+aside .input-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sortBy.input-switch label,
+aside .input-switch label {
+  margin-bottom: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortBy.input-switch input,
+aside .input-switch input {
+  appearance: none;
+}
+
+aside .input-switch .button {
+  height: 4.8rem;
+  border: 1px solid var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+aside .input-switch .button:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+aside .input-switch .button:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+aside .input-switch .button:has(input:checked) {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+aside button {
+  height: 4.8rem;
+  border: var(--primary) 1px solid;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.sortBy label {
+  color: #757575;
+}
+
+.sortBy *:not(label) {
+  pointer-events: none;
+}
+
+.sortBy[value="price"] .price,
+.sortBy[value="distance"] .distance {
+  color: #005e61;
+  text-decoration: underline;
+}
+
+/** 
+ MODE = search | result
+**/
+aside:not([mode="search"]) [for="search"],
+aside:not([mode="result"]) [for="result"] {
+  display: none !important;
+}
+
+/** SMALL **/
+@media (min-width: 576px) {
+  aside[mode="result"] {
+    width: 100%;
+  }
+}
+
+/** MEDIUM **/
+@media (min-width: 768px) {
+  aside .input-group {
+    max-width: 40rem;
+  }
+
+  aside[mode="result"] form {
+    flex-direction: row !important;
+    align-items: center;
+  }
+}
+
+aside .list {
+  border-top: 1px solid #949494;
+  padding: 1.6rem 2rem;
+}

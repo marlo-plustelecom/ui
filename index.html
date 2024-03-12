@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<script src="./lib/jquery.min.js"></script>
+<script src="./lib/bootstrap.min.js"></script>
+<script src="./lib/fontawesome-iconpicker.min.js"></script>
+<script src="./lib/solid.min.js"></script>
+<script src="./lib/fontawesome.min.js"></script>
+
+<script src="./js/main.js" async></script>
+
+<link rel="stylesheet" href="./lib/bootstrap.min.css" />
+<link rel="stylesheet" href="./css/style.css" />
+<link rel="stylesheet" href="./css/aside.css" />
+
+<body>
+  <main class="d-flex h-100 w-100 flex-column container-fluid px-0">
+    <nav class="d-flex align-items-center bg-dark text-white px-4">Petrol Map</nav>
+    <section class="d-flex flex-grow-1 flex-column flex-md-row">
+      <aside class="bg-white d-flex flex-column" mode="search">
+        <form class="p-4 d-flex flex-column -align-items-md-center gap-4">
+          <div class="input-group">
+            <input type="text" class="form-control" name="search" placeholder="Enter postcode or town"
+              aria-label="Enter postcode or town">
+            <div class="input-group-append">
+              <span class="input-group-text d-flex justify-content-center" style="width: 4.8rem;">
+                <i for="search" class="fas fa-crosshairs"></i>
+                <i for="result" class="fas fa-x"></i>
+              </span>
+            </div>
+          </div>
+
+          <div for="search" class="d-flex flex-column gap-4">
+            <p>8000+ UK petrol station prices tracked</p>
+
+            <div class="input-switch">
+              <label class="button">
+                <input type="radio" name="fuel" value="petrol" checked>
+                Petrol
+              </label>
+              <label class="button">
+                <input type="radio" name="fuel" value="diesel">
+                Diesel
+              </label>
+            </div>
+
+            <button class="search">View Current Prices</button>
+          </div>
+
+          <div for="result" class="d-flex justify-content-between flex-grow-1 overflow-hidden">
+            <p class="text-truncate">Current <span class="fuel-label font-weight-bold">unknown</span> prices in <span
+                class="search-label font-weight-bold text-uppercase">unknown</span></p>
+
+            <div class="sortBy input-switch d-none d-md-flex align-items-center gap-1 text-nowrap pl-4" value="price">
+              Sort by:
+              <label class="price"><input type="radio" name="sortBy" value="price" checked>Price</label>
+              <label class="distance"><input type="radio" name="sortBy" value="distance">Distance</label>
+            </div>
+          </div>
+        </form>
+
+        <div class="list">
+          <div class="d-flex d-md-none justify-content-end pr-4">
+            <div class="sortBy input-switch d-flex align-items-center gap-1" value="price">
+              Sort by:
+              <label class="price"><input type="radio" name="sortBy" value="price" checked>Price</label>
+              <label class="distance"><input type="radio" name="sortBy" value="distance">Distance</label>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <section class="content bg-warning flex-grow-1">
+        content
+      </section>
+    </section>
+  </main>
+</body>
+
+</html>
