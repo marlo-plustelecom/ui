@@ -27,7 +27,7 @@ $(() => {
 
 
     state = {
-      mode: Aside.MODES.SEARCH,
+      mode: Aside.MODES.RESULT,
       fuel: Aside.FUEL.PETROL,
       search: '',
       sort: Aside.SORT_BY.PRICE,

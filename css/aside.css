@@ -36,6 +36,7 @@ aside .input-switch label {
   margin-bottom: 0;
   cursor: pointer;
   user-select: none;
+  text-underline-offset: 3px;
 }
 
 .sortBy.input-switch input,

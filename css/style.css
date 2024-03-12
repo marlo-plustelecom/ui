@@ -5,6 +5,8 @@
 :root {
   --primary: #2b9b9f;
   --primary-light: #6bb9bc;
+
+  --border-light: #949494;
 }
 
 html,
