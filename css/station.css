@@ -1,5 +1,7 @@
 .station-card {
-  width: 33rem;
+  flex-basis: 33rem;
+  flex-grow: 1;
+  max-width: 45rem;
   height: 16.4rem;
   border: 1px solid var(--border-light);
   border-radius: 8px;

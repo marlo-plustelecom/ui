@@ -16,6 +16,7 @@ $(() => {
   const $searchBtnIcon = $asideEl.find('.input-group-append')
   const $sortBy = $('.sortBy');
   const $list = $('.list');
+  const $toggleViewBtn = $('.btn-toggle button');
 
   const $template = $('.station-card.template');
 
@@ -59,4 +60,15 @@ $(() => {
       asideController.sortBy = value;
     }
   }, 100));
+
+  $toggleViewBtn.on('click', (event) => {
+    if (event.target.classList.contains('map-view')) {
+      return $asideEl.attr('view', 'map')
+    }
+
+    $asideEl.attr('view', 'list')
+  });
+
+
+  asideController.search('test', 'diesel')
 })

@@ -77,8 +77,6 @@ export class Aside {
     this.templateEl = template;
     this.listEl = list;
     this.mode = this.state.mode;
-
-    // this.search('test', 'diesel')
   }
 
   get mode() {

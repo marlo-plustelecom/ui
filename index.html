@@ -20,11 +20,11 @@
 <link rel="stylesheet" href="./css/aside.css" />
 <link rel="stylesheet" href="./css/station.css" />
 
-<body>
+<body class="overflow-hidden">
   <main class="d-flex h-100 w-100 flex-column container-fluid px-0">
     <nav class="d-flex align-items-center bg-dark text-white px-4">Petrol Map</nav>
-    <section class="d-flex flex-grow-1 flex-column flex-md-row">
-      <aside class="bg-white d-flex flex-column" mode="search">
+    <section class="d-flex flex-grow-1 flex-column flex-md-row min-h-0">
+      <aside class="bg-white d-flex flex-column position-relative" mode="search" view="list">
         <form class="p-4 d-flex flex-column -align-items-md-center gap-4">
           <div class="input-group">
             <input type="text" class="form-control" name="search" placeholder="Enter postcode or town"
@@ -66,7 +66,7 @@
           </div>
         </form>
 
-        <div class="list-container">
+        <div class="list-container flex-column overflow-hidden min-h-0">
           <div class="d-flex d-md-none justify-content-end pb-4 pr-4">
             <div class="sortBy input-switch d-flex align-items-center gap-1" value="price">
               Sort by:
@@ -89,9 +89,18 @@
             <button class="mt-4">View more info</button>
           </div>
 
-          <div class="d-flex list">
+          <div class="d-flex list min-h-0 w-100 p-4 flex-grow-1">
             <!-- items here -->
           </div>
+        </div>
+
+        <div class="btn-toggle position-absolute justify-content-center flex-column">
+          <button class="map-view justify-content-center align-items-center gap-1">
+            Map View <i class="fas fa-chevron-up"></i>
+          </button>
+          <button class="list-view justify-content-center align-items-center gap-1">
+            List View <i class="fas fa-chevron-down"></i>
+          </button>
         </div>
       </aside>
       <section class="content bg-warning flex-grow-1">
