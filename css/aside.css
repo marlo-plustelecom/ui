@@ -3,10 +3,6 @@ aside {
   max-width: 1176px;
 }
 
-aside[mode="search"] .list {
-  display: none;
-}
-
 aside[mode="result"] {
   height: 100%;
 }
@@ -118,7 +114,18 @@ aside:not([mode="result"]) [for="result"] {
   }
 }
 
-aside .list {
+aside[mode="search"] .list-container {
+  display: none;
+}
+
+aside .list-container {
   border-top: 1px solid #949494;
   padding: 1.6rem 2rem;
+}
+
+aside .list {
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  justify-content: center;
+  overflow-y: auto;
 }

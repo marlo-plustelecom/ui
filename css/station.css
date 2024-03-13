@@ -1,0 +1,17 @@
+.station-card {
+  width: 33rem;
+  height: 16.4rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  display: flex;
+}
+
+.station-card.template,
+.station-card:not([status="up"]) .fa-arrow-up,
+.station-card:not([status="down"]) .fa-arrow-down {
+  display: none;
+}
+
+.station-card .image {
+  max-width: 15rem;
+}

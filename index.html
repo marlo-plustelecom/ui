@@ -13,11 +13,12 @@
 <script src="./lib/solid.min.js"></script>
 <script src="./lib/fontawesome.min.js"></script>
 
-<script src="./js/main.js" async></script>
+<script src="./js/main.js" type="module" async></script>
 
 <link rel="stylesheet" href="./lib/bootstrap.min.css" />
 <link rel="stylesheet" href="./css/style.css" />
 <link rel="stylesheet" href="./css/aside.css" />
+<link rel="stylesheet" href="./css/station.css" />
 
 <body>
   <main class="d-flex h-100 w-100 flex-column container-fluid px-0">
@@ -65,8 +66,8 @@
           </div>
         </form>
 
-        <div class="list">
-          <div class="d-flex d-md-none justify-content-end pr-4">
+        <div class="list-container">
+          <div class="d-flex d-md-none justify-content-end pb-4 pr-4">
             <div class="sortBy input-switch d-flex align-items-center gap-1" value="price">
               Sort by:
               <label class="price"><input type="radio" name="sortBy" value="price" checked>Price</label>
@@ -75,21 +76,20 @@
           </div>
 
 
-          <div class="d-flex flex-column border border-2 p-5 rounded-lg" style="width: 330px">
+          <div class="station-card template flex-column p-5" status="up">
             <div class="d-flex justify-content-between align-items-center">
-              <span>Image here</span>
+              <img class="image" />
               <div class="">
                 <p class="fa-xs pb-4">Price per litre:</p>
-                <span class="fa-xl">136.9</span>
+                <span class="fa-xl price">136.9</span>
                 <i class="fas fa-arrow-up text-danger"></i>
                 <i class="fas fa-arrow-down text-success"></i>
               </div>
-
             </div>
             <button class="mt-4">View more info</button>
           </div>
 
-          <div class="d-flex">
+          <div class="d-flex list">
             <!-- items here -->
           </div>
         </div>
