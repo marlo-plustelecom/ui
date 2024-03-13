@@ -1,7 +1,6 @@
 import { Aside } from './aside.js';
 
 $(() => {
-
   function debounce(cb, delay) {
     let timeout;
 
@@ -12,20 +11,23 @@ $(() => {
   }
 
   const $asideEl = $('aside');
+  const $searchInput = $asideEl.find('input[name="search"]');
   const $searchForm = $asideEl.find('form');
   const $searchBtnIcon = $asideEl.find('.input-group-append')
   const $sortBy = $('.sortBy');
   const $list = $('.list');
   const $toggleViewBtn = $('.btn-toggle button');
 
-  const $template = $('.station-card.template');
+  const $stationTemplate = $('.station-card.template');
+  const $adsTemplate = $('.ads-card.template');
 
   const asideController = new Aside({
     container: $asideEl,
     searchLabel: $asideEl.find('.search-label'),
     fuelLabel: $asideEl.find('.fuel-label'),
     sortBy: $sortBy,
-    template: $template,
+    stationTemplate: $stationTemplate,
+    adsTemplate: $adsTemplate,
     list: $list,
   });
 
@@ -51,6 +53,8 @@ $(() => {
     }
 
     asideController.mode = Aside.MODES.SEARCH;
+    $searchInput.val('');
+    $searchInput.focus();
   });
 
   $sortBy.on('click', debounce((event) => {
@@ -70,5 +74,5 @@ $(() => {
   });
 
   /** TESTING */
-  // asideController.search('test', 'diesel')
+  asideController.search('test', 'diesel')
 })

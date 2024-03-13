@@ -61,7 +61,7 @@ export class Aside {
   /**
    * @type {JQuery<HTMLElement> | null}
    */
-  templateEl = null;
+  stationTemplateEl = null;
 
   /**
    * @type {JQuery<HTMLElement> | null}
@@ -73,14 +73,16 @@ export class Aside {
     searchLabel,
     fuelLabel,
     sortBy,
-    template,
+    stationTemplate,
+    adsTemplate,
     list
   }) {
     this.asideEl = container;
     this.searchLabelEl = searchLabel;
     this.fuelLabelEl = fuelLabel;
     this.sortByEl = sortBy;
-    this.templateEl = template;
+    this.stationTemplateEl = stationTemplate;
+    this.adsTemplateEl = adsTemplate;
     this.listEl = list;
     this.mode = this.state.mode;
   }
@@ -135,8 +137,10 @@ export class Aside {
 
     this.listEl.html('');
 
-    items.forEach((item) => {
-      const template = this.templateEl.clone(true);
+    this.generateAds();
+
+    items.forEach((item, index) => {
+      const template = this.stationTemplateEl.clone(true);
 
       template.removeClass('template');
 
@@ -144,8 +148,21 @@ export class Aside {
       template.find('.image').attr('src', item.src).attr('alt', item.name);
       template.find('.price').text(item.price);
 
+      template.get(0).style.order = index;
+
       this.listEl.append(template);
     });
+  }
+
+  generateAds() {
+    const adsLength = Math.max(1, Math.floor(this.items.length / 4));
+
+    for (let i = 0; i < adsLength; i++) {
+      const template = this.adsTemplateEl.clone(true);
+      template.removeClass('template');
+
+      this.listEl.append(template);
+    }
   }
 
   /**
