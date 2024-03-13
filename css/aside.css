@@ -95,45 +95,6 @@ aside:not([mode="result"]) [for="result"] {
   display: none !important;
 }
 
-/** MOBILE **/
-@media (max-width: 575px) {
-  aside[mode="result"][view="map"] {
-    height: auto;
-  }
-
-  aside[mode="result"][view="map"] .list-container {
-    max-height: 0;
-    padding: 0 2rem;
-  }
-}
-
-/** SMALL **/
-@media (min-width: 576px) {
-  aside[mode="result"] {
-    width: 100%;
-  }
-
-  aside[mode="result"][view="map"] {
-    height: auto;
-  }
-}
-
-/** MEDIUM **/
-@media (min-width: 768px) {
-  aside .input-group {
-    max-width: 40rem;
-  }
-
-  aside[mode="result"] form {
-    flex-direction: row !important;
-    align-items: center;
-  }
-
-  aside .btn-toggle {
-    display: none;
-  }
-}
-
 aside[mode="result"] .list-container {
   display: flex;
   transition: all 0.3s ease-in-out;
@@ -172,9 +133,56 @@ aside .btn-toggle button {
 
 aside .btn-toggle svg {
   width: 1.4rem;
+  pointer-events: none;
 }
 
 aside:not([view="map"]) .btn-toggle button.list-view,
 aside:not([view="list"]) .btn-toggle button.map-view {
   display: none;
+}
+
+/** MOBILE **/
+@media (max-width: 575px) {
+}
+
+@media (max-width: 767px) {
+  aside[mode="result"][view="map"] {
+    height: auto;
+  }
+
+  aside[mode="result"][view="map"] .list-container {
+    max-height: 0;
+    padding: 0 2rem;
+  }
+}
+
+/** SMALL **/
+@media (min-width: 576px) {
+  aside[mode="result"] {
+    width: 100%;
+  }
+
+  aside[mode="result"][view="map"] {
+    height: auto;
+  }
+}
+
+/** MEDIUM **/
+@media (min-width: 768px) {
+  aside .input-group {
+    max-width: 40rem;
+  }
+
+  aside[mode="result"] form {
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  aside .btn-toggle {
+    display: none;
+  }
+
+  aside[mode="result"] {
+    height: 100%;
+  }
 }

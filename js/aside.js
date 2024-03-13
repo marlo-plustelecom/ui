@@ -20,11 +20,17 @@ export class Aside {
     DISTANCE: 'distance',
   }
 
+  static VIEW = {
+    MAP: 'map',
+    LIST: 'list'
+  }
+
   state = {
     mode: Aside.MODES.SEARCH,
     fuel: Aside.FUEL.PETROL,
     search: '',
     sort: Aside.SORT_BY.PRICE,
+    view: Aside.VIEW.LIST,
 
     /**
      * @type {Station[]}
@@ -99,11 +105,21 @@ export class Aside {
     this.generateList();
   }
 
+  get view() {
+    return this.state.view;
+  }
+
+  set view(value) {
+    this.state.view = value;
+    this.asideEl.attr('view', value);
+  }
+
   search(search, fuel) {
     this.state.search = search;
     this.state.fuel = fuel;
 
     this.mode = Aside.MODES.RESULT;
+    this.view = Aside.VIEW.LIST;
 
     this.searchLabelEl.text(search);
     this.fuelLabelEl.text(fuel);

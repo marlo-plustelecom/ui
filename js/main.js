@@ -63,12 +63,12 @@ $(() => {
 
   $toggleViewBtn.on('click', (event) => {
     if (event.target.classList.contains('map-view')) {
-      return $asideEl.attr('view', 'map')
+      return asideController.view = Aside.VIEW.MAP;
     }
 
-    $asideEl.attr('view', 'list')
+    asideController.view = Aside.VIEW.LIST;
   });
 
-
+  /** TESTING */
   // asideController.search('test', 'diesel')
 })
