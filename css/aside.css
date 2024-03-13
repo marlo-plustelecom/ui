@@ -1,6 +1,7 @@
 aside {
   min-width: 380px;
   max-width: 1176px;
+  transition: all 0.3s ease-in-out;
 }
 
 aside[mode="result"] {
@@ -169,6 +170,11 @@ aside:not([view="list"]) .btn-toggle button.map-view {
 
 /** MEDIUM **/
 @media (min-width: 768px) {
+  aside[mode="search"] {
+    max-width: 380px;
+    width: 100%;
+  }
+
   aside .input-group {
     max-width: 40rem;
   }
