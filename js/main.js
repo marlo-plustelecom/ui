@@ -74,5 +74,5 @@ $(() => {
   });
 
   /** TESTING */
-  asideController.search('test', 'diesel')
+  // asideController.search('test', 'diesel')
 })
