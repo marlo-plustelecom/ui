@@ -211,7 +211,7 @@ aside[mode="result"] .controls {
 
 @media (max-width: 767px) {
   aside[mode="result"][view="map"] {
-    max-height: auto;
+    height: auto;
   }
 
   aside[mode="result"][view="map"] .list-container {
