@@ -79,5 +79,7 @@ $(() => {
   });
 
   /** TESTING */
-  asideController.search('test', 'diesel')
+  if (location.origin.includes('localhost')) {
+    asideController.search('test', 'diesel')
+  }
 })
