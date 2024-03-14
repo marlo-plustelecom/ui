@@ -28,7 +28,7 @@ aside .input-switch {
   justify-content: center;
 }
 
-.sortBy.input-switch label,
+.sortBy label,
 aside .input-switch label {
   margin-bottom: 0;
   cursor: pointer;
@@ -36,7 +36,7 @@ aside .input-switch label {
   text-underline-offset: 3px;
 }
 
-.sortBy.input-switch input,
+.sortBy input,
 aside .input-switch input {
   appearance: none;
 }
@@ -78,8 +78,12 @@ aside button {
   color: #757575;
 }
 
-.sortBy *:not(label) {
+.sortBy :not(label) {
   pointer-events: none;
+}
+
+.sortBy label {
+  pointer-events: initial;
 }
 
 .sortBy[value="price"] .price,
@@ -98,7 +102,6 @@ aside:not([mode="result"]) [for="result"] {
 
 aside[mode="result"] .list-container {
   display: flex;
-  transition: all 0.3s ease-in-out;
 }
 
 aside[mode="search"] .btn-toggle,
@@ -110,6 +113,7 @@ aside .list-container {
   border-top: 1px solid #949494;
   padding: 1.6rem 2rem;
   flex-grow: 1;
+  transition: all 300ms ease-in-out;
 }
 
 aside .list {
@@ -130,16 +134,75 @@ aside .btn-toggle {
 
 aside .btn-toggle button {
   display: flex;
+  white-space: nowrap;
 }
 
 aside .btn-toggle svg {
   width: 1.4rem;
   pointer-events: none;
+  transition: all 0.3s ease-in-out;
 }
 
-aside:not([view="map"]) .btn-toggle button.list-view,
-aside:not([view="list"]) .btn-toggle button.map-view {
+aside:not([view="map"]) .btn-toggle .list-view,
+aside:not([view="list"]) .btn-toggle .map-view {
   display: none;
+}
+
+aside[view="map"] .btn-toggle svg {
+  transform: rotate(180deg);
+}
+
+aside[view="list"] .btn-toggle svg {
+  transform: rotate(0deg);
+}
+
+aside .controls {
+  display: none;
+  top: 0;
+  right: 0;
+  transform: translateX(calc(100% + 10px)) translateY(20px);
+  justify-content: center;
+  align-items: center;
+}
+
+aside .controls button.toggle-size {
+  color: #2b9b9f;
+  transition: all 0.3s ease-in-out;
+}
+
+aside[collapse="true"] .controls button.toggle-size {
+  transform: rotate(180deg);
+}
+
+aside .controls .btn-group-vertical button {
+  width: 3rem;
+}
+
+aside .controls button {
+  height: auto;
+  background-color: white;
+  color: #575757;
+  border-color: #949494;
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
+aside .controls button:first-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+aside .controls button:last-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+aside .controls svg {
+  font-size: 1.3rem;
+}
+
+aside[mode="result"] .controls {
+  display: flex;
 }
 
 /** MOBILE **/
@@ -148,7 +211,7 @@ aside:not([view="list"]) .btn-toggle button.map-view {
 
 @media (max-width: 767px) {
   aside[mode="result"][view="map"] {
-    height: auto;
+    max-height: auto;
   }
 
   aside[mode="result"][view="map"] .list-container {
@@ -170,22 +233,28 @@ aside:not([view="list"]) .btn-toggle button.map-view {
 
 /** MEDIUM **/
 @media (min-width: 768px) {
+  aside[mode="result"][collapse="true"],
   aside[mode="search"] {
     max-width: 380px;
     width: 100%;
   }
 
-  aside .input-group {
-    max-width: 40rem;
+  aside[mode="result"]:not([collapse="true"]) div[for="result"] .sortBy {
+    display: flex !important;
   }
 
-  aside[mode="result"] form {
+  aside[mode="result"]:not([collapse="true"]) form {
     flex-direction: row !important;
     align-items: center;
   }
 
+  aside[mode="result"] .input-group {
+    max-width: 40rem;
+  }
+
+  aside[mode="result"]:not([collapse="true"]) .list-container .sortBy,
   aside .btn-toggle {
-    display: none;
+    display: none !important;
   }
 
   aside[mode="result"] {

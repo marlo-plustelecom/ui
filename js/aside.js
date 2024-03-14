@@ -32,6 +32,8 @@ export class Aside {
     sort: Aside.SORT_BY.PRICE,
     view: Aside.VIEW.LIST,
 
+    collapse: false,
+
     /**
      * @type {Station[]}
      */
@@ -116,7 +118,16 @@ export class Aside {
     this.asideEl.attr('view', value);
   }
 
-  search(search, fuel) {
+  get collapse() {
+    return this.state.collapse;
+  }
+
+  set collapse(value) {
+    this.state.collapse = value;
+    this.asideEl.attr('collapse', value);
+  }
+
+  async search(search, fuel) {
     this.state.search = search;
     this.state.fuel = fuel;
 
@@ -126,7 +137,7 @@ export class Aside {
     this.searchLabelEl.text(search);
     this.fuelLabelEl.text(fuel);
 
-    const items = this.getItems(search, fuel);
+    const items = await this.getItems(search, fuel);
     this.items = items;
 
     this.generateList();
@@ -180,7 +191,7 @@ export class Aside {
     })
   }
 
-  getItems() {
+  async getItems() {
     return [
       {
         name: 'Tesco',

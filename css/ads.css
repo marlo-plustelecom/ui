@@ -1,15 +1,19 @@
 .ads-card {
+  width: 100%;
+}
+
+.ads-card .content {
   width: 728px;
   height: 90px;
   background-color: var(--border-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .ads-card.template {
   display: none;
+}
+
+.list .ads-card {
+  display: flex;
 }
 
 .list .ads-card:nth-child(1) {
@@ -24,6 +28,34 @@
   order: 9;
 }
 
+.list .ads-card:nth-child(4) {
+  order: 13;
+}
+
+.list .ads-card:nth-child(5) {
+  order: 17;
+}
+
+.list .ads-card:nth-child(6) {
+  order: 21;
+}
+
+.list .ads-card:nth-child(7) {
+  order: 25;
+}
+
+.list .ads-card:nth-child(8) {
+  order: 29;
+}
+
+.list .ads-card:nth-child(9) {
+  order: 33;
+}
+
+.list .ads-card:nth-child(10) {
+  order: 37;
+}
+
 @media (min-width: 768px) {
   .list .ads-card:nth-child(1) {
     order: 2;
@@ -35,6 +67,34 @@
 
   .list .ads-card:nth-child(3) {
     order: 10;
+  }
+
+  .list .ads-card:nth-child(4) {
+    order: 14;
+  }
+
+  .list .ads-card:nth-child(5) {
+    order: 18;
+  }
+
+  .list .ads-card:nth-child(6) {
+    order: 22;
+  }
+
+  .list .ads-card:nth-child(7) {
+    order: 26;
+  }
+
+  .list .ads-card:nth-child(8) {
+    order: 30;
+  }
+
+  .list .ads-card:nth-child(9) {
+    order: 34;
+  }
+
+  .list .ads-card:nth-child(10) {
+    order: 38;
   }
 }
 
@@ -49,5 +109,75 @@
 
   .list .ads-card:nth-child(3) {
     order: 12;
+  }
+
+  .list .ads-card:nth-child(4) {
+    order: 16;
+  }
+
+  .list .ads-card:nth-child(5) {
+    order: 20;
+  }
+
+  .list .ads-card:nth-child(6) {
+    order: 24;
+  }
+
+  .list .ads-card:nth-child(7) {
+    order: 28;
+  }
+
+  .list .ads-card:nth-child(8) {
+    order: 32;
+  }
+
+  .list .ads-card:nth-child(9) {
+    order: 36;
+  }
+
+  .list .ads-card:nth-child(10) {
+    order: 40;
+  }
+}
+
+@media (min-width: 1155px) {
+  .list .ads-card:nth-child(1) {
+    order: 3;
+  }
+
+  .list .ads-card:nth-child(2) {
+    order: 6;
+  }
+
+  .list .ads-card:nth-child(3) {
+    order: 9;
+  }
+
+  .list .ads-card:nth-child(4) {
+    order: 12;
+  }
+
+  .list .ads-card:nth-child(5) {
+    order: 15;
+  }
+
+  .list .ads-card:nth-child(6) {
+    order: 18;
+  }
+
+  .list .ads-card:nth-child(7) {
+    order: 21;
+  }
+
+  .list .ads-card:nth-child(8) {
+    order: 24;
+  }
+
+  .list .ads-card:nth-child(9) {
+    order: 27;
+  }
+
+  .list .ads-card:nth-child(10) {
+    order: 30;
   }
 }

@@ -17,6 +17,7 @@ $(() => {
   const $sortBy = $('.sortBy');
   const $list = $('.list');
   const $toggleViewBtn = $('.btn-toggle button');
+  const $toggleSizeBtn = $('.toggle-size');
 
   const $stationTemplate = $('.station-card.template');
   const $adsTemplate = $('.ads-card.template');
@@ -65,14 +66,18 @@ $(() => {
     }
   }, 100));
 
-  $toggleViewBtn.on('click', (event) => {
-    if (event.target.classList.contains('map-view')) {
+  $toggleViewBtn.on('click', () => {
+    if (asideController.view === Aside.VIEW.LIST) {
       return asideController.view = Aside.VIEW.MAP;
     }
 
     asideController.view = Aside.VIEW.LIST;
   });
 
+  $toggleSizeBtn.on('click', () => {
+    asideController.collapse = !asideController.collapse;
+  });
+
   /** TESTING */
-  // asideController.search('test', 'diesel')
+  asideController.search('test', 'diesel')
 })
