@@ -1,4 +1,5 @@
 import { Aside } from './aside.js';
+import { trackSize } from './size-tracker.js';
 
 $(() => {
   function debounce(cb, delay) {
@@ -79,7 +80,9 @@ $(() => {
   });
 
   /** TESTING */
-  if (location.origin.includes('localhost')) {
+  if (location.origin.includes('localhost') || location.origin.includes('127.0.0.1')) {
     asideController.search('test', 'diesel')
+
+    trackSize('aside');
   }
 })

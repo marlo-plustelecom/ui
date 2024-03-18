@@ -17,3 +17,8 @@
 .station-card .image {
   max-width: 15rem;
 }
+
+.station-card.filler {
+  pointer-events: none;
+  visibility: hidden;
+}

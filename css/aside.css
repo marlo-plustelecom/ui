@@ -1,7 +1,15 @@
+:root {
+  --list-container-border-size: 4rem;
+  --list-border-size: 3rem;
+  --list-station-card-gap: 1.6rem;
+  --station-card-width: 33rem;
+}
+
 aside {
-  min-width: 380px;
+  min-width: 38rem;
   max-width: 1176px;
   transition: all 0.3s ease-in-out;
+  container-type: inline-size;
 }
 
 aside[mode="result"] {
@@ -205,6 +213,18 @@ aside[mode="result"] .controls {
   display: flex;
 }
 
+.list .station-card.filler {
+  display: none;
+}
+
+aside[mode="result"] {
+  width: 100%;
+}
+
+aside[mode="result"][view="map"] {
+  height: auto;
+}
+
 /** MOBILE **/
 @media (max-width: 575px) {
 }
@@ -220,22 +240,49 @@ aside[mode="result"] .controls {
   }
 }
 
-/** SMALL **/
-@media (min-width: 576px) {
-  aside[mode="result"] {
-    width: 100%;
-  }
+/* TESTING */
+.list .station-card {
+  background-color: brown;
+}
 
-  aside[mode="result"][view="map"] {
-    height: auto;
+/** SMALL **/
+/* 2 columns */
+@container (min-width: 756px) {
+  .list .station-card {
+    background-color: #68e3f7;
+  }
+}
+
+/* 3 columns */
+@container (min-width: 1101.5px) {
+  .list .station-card {
+    background-color: #68e357;
+  }
+}
+
+@media (min-width: 576px) {
+  .list[two="0"] .station-card.filler {
+    display: none;
   }
 }
 
 /** MEDIUM **/
 @media (min-width: 768px) {
+  .list[two="0"] .station-card.filler {
+    display: flex;
+  }
+
+  .list[three="0"] .station-card.filler {
+    display: none;
+  }
+
+  .list[three="2"] .station-card.filler:last-child {
+    display: none;
+  }
+
   aside[mode="result"][collapse="true"],
   aside[mode="search"] {
-    max-width: 380px;
+    max-width: 38rem;
     width: 100%;
   }
 

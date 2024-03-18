@@ -148,6 +148,9 @@ export class Aside {
 
     this.listEl.html('');
 
+    this.listEl.attr('two', items.length % 2);
+    this.listEl.attr('three', items.length % 3);
+
     this.generateAds();
 
     items.forEach((item, index) => {
@@ -163,6 +166,22 @@ export class Aside {
 
       this.listEl.append(template);
     });
+
+    this.generateFiller();
+  }
+
+  generateFiller() {
+    const startingIndex = this.items.length;
+    for (let i = 0; i < 2; i++) {
+      const template = this.stationTemplateEl.clone(true);
+
+      template.removeClass('template').addClass('filler');
+
+      template.find('.price').text(0);
+      template.get(0).style.order = startingIndex + i;
+
+      this.listEl.append(template);
+    }
   }
 
   generateAds() {

@@ -56,7 +56,7 @@
   order: 37;
 }
 
-@media (min-width: 768px) {
+@container (min-width: 756px) {
   .list .ads-card:nth-child(1) {
     order: 2;
   }
@@ -98,51 +98,10 @@
   }
 }
 
+/* 2 columns */
 @media (min-width: 992px) {
   .list .ads-card:nth-child(1) {
-    order: 4;
-  }
-
-  .list .ads-card:nth-child(2) {
-    order: 8;
-  }
-
-  .list .ads-card:nth-child(3) {
-    order: 12;
-  }
-
-  .list .ads-card:nth-child(4) {
-    order: 16;
-  }
-
-  .list .ads-card:nth-child(5) {
-    order: 20;
-  }
-
-  .list .ads-card:nth-child(6) {
-    order: 24;
-  }
-
-  .list .ads-card:nth-child(7) {
-    order: 28;
-  }
-
-  .list .ads-card:nth-child(8) {
-    order: 32;
-  }
-
-  .list .ads-card:nth-child(9) {
-    order: 36;
-  }
-
-  .list .ads-card:nth-child(10) {
-    order: 40;
-  }
-}
-
-@media (min-width: 1155px) {
-  .list .ads-card:nth-child(1) {
-    order: 3;
+    order: 2;
   }
 
   .list .ads-card:nth-child(2) {
@@ -150,34 +109,77 @@
   }
 
   .list .ads-card:nth-child(3) {
-    order: 9;
+    order: 10;
   }
 
   .list .ads-card:nth-child(4) {
-    order: 12;
+    order: 14;
   }
 
   .list .ads-card:nth-child(5) {
-    order: 15;
+    order: 28;
   }
 
   .list .ads-card:nth-child(6) {
-    order: 18;
+    order: 32;
   }
 
   .list .ads-card:nth-child(7) {
-    order: 21;
+    order: 36;
   }
 
   .list .ads-card:nth-child(8) {
-    order: 24;
+    order: 40;
   }
 
   .list .ads-card:nth-child(9) {
-    order: 27;
+    order: 44;
   }
 
   .list .ads-card:nth-child(10) {
-    order: 30;
+    order: 48;
+  }
+}
+
+/* 3 columns */
+@container (min-width: 1101.5px) {
+  .list .ads-card:nth-child(1) {
+    order: 3;
+  }
+
+  .list .ads-card:nth-child(2) {
+    order: 9;
+  }
+
+  .list .ads-card:nth-child(3) {
+    order: 15;
+  }
+
+  .list .ads-card:nth-child(4) {
+    order: 21;
+  }
+
+  .list .ads-card:nth-child(5) {
+    order: 27;
+  }
+
+  .list .ads-card:nth-child(6) {
+    order: 33;
+  }
+
+  .list .ads-card:nth-child(7) {
+    order: 39;
+  }
+
+  .list .ads-card:nth-child(8) {
+    order: 45;
+  }
+
+  .list .ads-card:nth-child(9) {
+    order: 51;
+  }
+
+  .list .ads-card:nth-child(10) {
+    order: 57;
   }
 }
