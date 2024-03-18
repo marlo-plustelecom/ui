@@ -240,18 +240,9 @@ aside[mode="result"][view="map"] {
   }
 }
 
-/* TESTING */
-.list .station-card {
-  background-color: brown;
-}
-
 /** SMALL **/
 /* 2 columns */
 @container (min-width: 756px) and (max-width: 1101.5px) {
-  .list .station-card {
-    background-color: #68e3f7;
-  }
-
   .list[two="1"] .station-card.filler:nth-last-child(2) {
     display: flex;
   }
@@ -259,10 +250,6 @@ aside[mode="result"][view="map"] {
 
 /* 3 columns */
 @container (min-width: 1101.5px) {
-  .list .station-card {
-    background-color: #68e357;
-  }
-
   .list[three="1"] .station-card.filler,
   .list[three="2"] .station-card.filler:nth-last-child(2) {
     display: flex;
@@ -270,12 +257,7 @@ aside[mode="result"][view="map"] {
 }
 
 /** MEDIUM **/
-/* @container (min-width: 756px) { */
 @media (min-width: 768px) {
-  aside {
-    background-color: yellow !important;
-  }
-
   aside[mode="result"][collapse="true"],
   aside[mode="search"] {
     max-width: 38rem;
