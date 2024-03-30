@@ -1,0 +1,42 @@
+.weather-container {
+  container-type: inline-size;
+  max-width: 420px;
+}
+
+.weather-container_contents .days {
+  gap: 0;
+}
+
+.weather-container_contents .day {
+  max-width: 46px;
+}
+
+.weather-container_contents .day h5 {
+  font-size: 20px;
+}
+
+.weather-container_contents .day span {
+  font-size: 12px;
+  color: #757575;
+}
+
+.weather-container_contents .day img {
+  height: 46px;
+  width: 40px;
+}
+
+@container (min-width: 300px) {
+  .weather-container_contents .days {
+    gap: 10px;
+  }
+
+  .weather-container_contents img {
+    width: 46px;
+  }
+}
+
+@container (min-width: 400px) {
+  .weather-container_contents .days {
+    gap: 20px;
+  }
+}

@@ -1,8 +1,9 @@
 .station-card {
-  flex-basis: 33rem;
+  min-width: 330px;
+  flex-basis: 330px;
   flex-grow: 1;
-  max-width: 45rem;
-  height: 16.4rem;
+  max-width: 450px;
+  min-height: 164px;
   border: 1px solid var(--border-light);
   border-radius: 8px;
   display: flex;
@@ -15,10 +16,29 @@
 }
 
 .station-card .image {
-  max-width: 15rem;
+  max-width: 60px;
+  max-height: 60px;
 }
 
 .station-card.filler {
   pointer-events: none;
   visibility: hidden;
+}
+
+.station-card a {
+  height: 48px;
+  border: var(--primary) 1px solid;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.station-card a:hover {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.station-card .star:focus {
+  outline: none;
 }

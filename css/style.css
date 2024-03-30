@@ -49,6 +49,14 @@ input.form-control {
   min-height: 0;
 }
 
+.gap-3 {
+  gap: 24px;
+}
+
+.gap-4 {
+  gap: 32px;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;

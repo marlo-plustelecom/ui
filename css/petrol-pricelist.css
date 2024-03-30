@@ -1,0 +1,119 @@
+.petrol-pricelist {
+}
+
+.petrol-pricelist .item.template {
+  display: none;
+}
+
+.petrol-pricelist th.action {
+  pointer-events: none;
+}
+
+.petrol-pricelist th:not(.action) {
+  cursor: pointer;
+  user-select: none;
+}
+
+.petrol-pricelist th svg {
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.petrol-pricelist .price[status="down"] .fa-arrow-up {
+  color: green;
+  transform: rotate(180deg);
+}
+
+.petrol-pricelist .price[status="up"] .fa-arrow-up {
+  color: red;
+}
+
+.petrol-pricelist table[sort="brand"][order="asc"] .brand svg,
+.petrol-pricelist table[sort="address"][order="asc"] .address svg,
+.petrol-pricelist table[sort="petrol"][order="asc"] .petrol svg,
+.petrol-pricelist table[sort="diesel"][order="asc"] .diesel svg {
+  transform: rotate(180deg);
+}
+
+.petrol-pricelist thead {
+  border-bottom: 1px solid #000000;
+  padding: 10px;
+}
+.petrol-pricelist th {
+  font-weight: 400;
+  font-size: 14px;
+  color: #757575;
+  padding-bottom: 10px;
+}
+
+.petrol-pricelist tbody tr td {
+  padding-top: 10px;
+}
+
+.petrol-pricelist .brand img {
+  max-height: 25px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.petrol-pricelist th.address {
+  padding: 0 20px 10px;
+}
+.petrol-pricelist td.address {
+  color: #131313;
+  align-self: center;
+  font-size: 14px;
+  max-width: 230px;
+  word-break: normal;
+  text-wrap: pretty;
+  padding: 10px 20px;
+}
+
+.petrol-pricelist .action > div {
+  gap: 10px;
+}
+
+.petrol-pricelist .direction {
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 1rem;
+  color: #ffffff;
+  margin: 0 auto;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #2b9b9f;
+  border: 1px solid #2b9b9f;
+  white-space: nowrap;
+  height: fit-content;
+}
+
+.petrol-pricelist .action .add-to-favorites a {
+  color: #757575;
+}
+
+.petrol-pricelist .petrol-price,
+.petrol-pricelist .diesel-price {
+  font-size: 30px;
+}
+
+.petrol-pricelist .favorite a {
+  color: #757575;
+}
+
+.petrol-pricelist .address,
+.petrol-pricelist .action {
+  display: none;
+}
+
+@media (min-width: 650px) {
+  .petrol-pricelist .address {
+    display: table-cell;
+  }
+}
+
+@media (min-width: 992px) {
+  .petrol-pricelist .action {
+    display: table-cell;
+  }
+}

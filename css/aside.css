@@ -1,10 +1,3 @@
-:root {
-  --list-container-border-size: 4rem;
-  --list-border-size: 3rem;
-  --list-station-card-gap: 1.6rem;
-  --station-card-width: 33rem;
-}
-
 aside {
   min-width: 38rem;
   max-width: 1176px;
